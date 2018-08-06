@@ -9,19 +9,19 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 # Example 1: Adding a student to DB
-# def add_student(name, year, finished_lab):
-# 	"""
-# 	Add a student to the database, given
-# 	their name, year, and whether they have
-# 	finished the lab.
-# 	"""
-# 	student_object = Student(
-# 		name=name,
-# 		year=year,
-# 		finished_lab=finished_lab)
-# 	session.add(student_object)
-# 	session.commit()
-# add_student("Mayuri", 2, True)
+def add_student(name, year, finished_lab):
+	"""
+	Add a student to the database, given
+	their name, year, and whether they have
+	finished the lab.
+	"""
+	student_object = Student(
+		name=name,
+		year=year,
+		finished_lab=finished_lab)
+	session.add(student_object)
+	session.commit()
+add_student("Mayuri", 2, True)
 
 # Example 2: Querying first student from DB
 # def simple_query():

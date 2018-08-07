@@ -28,12 +28,16 @@ print(query_all_articles())
 
 def query_article_by_topic(topic):
 	article = session.query(Knowledge).filter_by(
-		wikipage=topic).first()
+		topic=topic).first()
 	return article
 print(query_article_by_topic("blah blah blah"))
 
-def delete_article_by_topic():
-	pass
+def delete_article_by_topic(topic):
+	session.query(Knowledge).filter_by(
+		topic=topic).delete()
+	session.commit()
+delete_article_by_topic("blah blah blah")
+print(query_all_articles())
 
 def delete_all_articles():
 	pass

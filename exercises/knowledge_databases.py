@@ -20,10 +20,17 @@ add_article("123", "blah blah blah", 10)
 	
 
 def query_all_articles():
-	pass
+	articles = session.query(Knowledge).all()
+	return articles
+print(query_all_articles())
 
-def query_article_by_topic():
-	pass
+
+
+def query_article_by_topic(topic):
+	article = session.query(Knowledge).filter_by(
+		wikipage=topic).first()
+	return article
+print(query_article_by_topic("blah blah blah"))
 
 def delete_article_by_topic():
 	pass

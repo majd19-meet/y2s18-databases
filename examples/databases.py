@@ -45,16 +45,16 @@ add_student("Mayuri", 2, True)
 # print(query_all())
 
 # Example 4: Get first student from DB,
-# with a specific name.
-# def query_by_name(name):
-# 	"""
-# 	Find the first student in the database,
-# 	by their name
-# 	"""
-# 	student = session.query(Student).filter_by(
-# 		name=name).first()
-# 	return student
-# print(query_by_name("Mayuri"))
+with a specific name.
+def query_by_name(name):
+	"""
+	Find the first student in the database,
+	by their name
+	"""
+	student = session.query(Student).filter_by(
+		name=name).first()
+	return student
+print(query_by_name("Mayuri"))
 
 # Example 5: Delete all students with
 # a certain name from DB
